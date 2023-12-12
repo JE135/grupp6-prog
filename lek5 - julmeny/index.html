@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Christmas Menu</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Bakgrundsfärg för sidan */
+        }
+
+        .container {
+            width: 70%; /* Justera bredden på innehållet */
+            display: flex;
+            border: 2px solid black; /* Svart ram runt innehållet */
+            border-radius: 20px; /* Rundade hörn */
+            overflow: hidden; /* För att rundade hörn ska synas */
+        }
+
+        .content {
+            width: 50%;
+            padding: 20px;
+            background-color: white; /* Vit bakgrund för innehållet */
+        }
+
+        .menu {
+            color: black; /* Textfärg för menyn */
+        }
+
+        .menu ul {
+            list-style: none; /* Tar bort punkterna från listan */
+            padding: 0; /* Tar bort list-padding */
+            margin: 0; /* Tar bort list-margin */
+        }
+
+        .menu ul li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px; /* Lite mellanrum mellan länkarna */
+        }
+
+        .menu ul li a {
+            text-decoration: none; /* Ta bort understrykning från länkar */
+            color: black; /* Textfärg för länkar */
+            font-weight: bold; /* Gör länktexten fetstilt */
+            font-size: larger;
+        }
+
+        .price-tag {
+            background-color: #ffd700; /* Guldig färg för pristagen */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .background-image {
+            width: 50%;
+            height: 100vh;
+            background-image: url('https://t4.ftcdn.net/jpg/01/83/72/63/360_F_183726395_fZrGFHhgsQdSqVPYdLrStZEeDaQ3Czzi.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="menu">
+                <h1>Christmas Menu</h1>
+
+                <h2>Starters</h2>
+                <ul>
+                    <li>
+                        <a href="starter1.html">
+                            <b>Gravad lax med hovmästarsås</b>
+                        </a>
+                        <span class="price-tag">12 €</span>
+                    </li>
+                    <li>
+                        <a href="starter2.html">
+                            <b>Rödbetssoppa</b>
+                        </a>
+                        <span class="price-tag">9 €</span>
+                    </li>
+                    <li>
+                        <a href="starter3.html">
+                            <b>Varm getostsallad med valnötter och honung</b>
+                        </a>
+                        <span class="price-tag">11 €</span>
+                    </li>
+                </ul>
+
+                <h2>Main Courses</h2>
+                <ul>
+                    <li>
+                        <a href="Maincourse1.html">
+                            <b>Glaserad julskinka</b>
+                        </a>
+                        <span class="price-tag">20 €</span>
+                    </li>
+                    <li>
+                        <a href="Maincourse2.html">
+                            <b>Lammstek med rosmarin och vitlök</b>
+                        </a>
+                        <span class="price-tag">18 €</span>
+                    </li>
+                    <li>
+                        <a href="Maincourse3.html">
+                            <b>Janssons frestelse</b>
+                        </a>
+                        <span class="price-tag">15 €</span>
+                    </li>
+                </ul>
+
+                <h2>Desserts</h2>
+                <ul>
+                    <li>
+                        <a href="Dessert1.html">
+                            <b>Saffranspannkaka</b>
+                        </a>
+                        <span class="price-tag">8 €</span>
+                    </li>
+                    <li>
+                        <a href="Dessert2.html">
+                            <b>Pepparkakskaka</b>
+                        </a>
+                        <span class="price-tag">7 €</span>
+                    </li>
+                    <li>
+                        <a href="Dessert3.html">
+                            <b>Ris à la Malta</b>
+                        </a>
+                        <span class="price-tag">9 €</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="background-image"></div>
+    </div>
+</body>
+</html>

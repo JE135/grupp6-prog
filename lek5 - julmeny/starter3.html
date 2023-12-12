@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Julmeny</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 70%;
+            display: flex;
+            border: 2px solid black;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .text-content {
+            width: 50%;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .menu {
+            color: black;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu ul li {
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: large;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu ul li span {
+            margin-left: 8px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .background-image {
+            width: 50%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-content">
+            <div class="menu">
+                <h1>Julmeny</h1>
+
+                <h2>Varm getostsallad med valnötter och honung</h2>
+                <ul>
+                    <li><span>200 g</span><span>getost</span></li>
+                    <li><span>100 g</span><span>valnötter</span></li>
+                    <li><span>200 g</span><span>grönsallad</span></li>
+                    <li><span>2 msk</span><span>honung</span></li>
+                    <li><span>2 msk</span><span>olivolja</span></li>
+                    <li><span>1 msk</span><span>balsamvinäger</span></li>
+                    <li><span>salt</span></li>
+                    <li><span>svartpeppar</span></li>
+                </ul>
+
+                <a href="index.html">Tillbaka</a>
+            </div>
+        </div>
+        <div class="background-image" style="background-image: url('https://img.koket.se/standard-mega/gratinerad-chevre-med-ringlad-honung.jpg');"></div>
+    </div>
+</body>
+</html>

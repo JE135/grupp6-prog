@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Julmeny</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 70%;
+            display: flex;
+            border: 2px solid black;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .text-content {
+            width: 50%;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .menu {
+            color: black;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu ul li {
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: large;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu ul li span {
+            margin-left: 8px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .background-image {
+            width: 50%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-content">
+            <div class="menu">
+                <h1>Julmeny</h1>
+
+                <h2>Lammstek med rosmarin och vitlök</h2>
+                <ul>
+                    <li><span>1 st</span><span>Lammstek (ca 1,5 kg, benfri)</span></li>
+                    <li><span>4 st</span><span>Vitlöksklyftor (skalade och skivade)</span></li>
+                    <li><span>2 kvistar</span><span>Färsk rosmarin (hackad)</span></li>
+                    <li><span>3 msk</span><span>Olivolja</span></li>
+                    <li><span>1 tsk</span><span>Flingsalt</span></li>
+                    <li><span>1 tsk</span><span>Malen svartpeppar</span></li>
+                </ul>
+
+                <a href="index.html">Tillbaka</a>
+            </div>
+        </div>
+        <div class="background-image" style="background-image: url('https://shared.cdn.smp.schibsted.com/v2/images/2979ebc1-3aeb-4667-baa7-f7c86d8d5287?fit=crop&h=466&w=700&s=34dbe9068ef6a3f5f84a3e918523ea3e94c04fb9');"></div>
+    </div>
+</body>
+</html>
