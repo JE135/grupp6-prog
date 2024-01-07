@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Julkalender 2023</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.pinimg.com/736x/f2/4b/5e/f24b5eb5882aecf48e0232adade1078c.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(50px, 1fr));
+      grid-auto-rows: minmax(50px, 1fr);
+      gap: 5px;
+      margin: 5px;
+    }
+
+    .door {
+      background-color: firebrick;
+      border: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      cursor: pointer;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.3s ease-in-out;
+      border-radius: 8px;
+    }
+
+    .door:hover {
+      background-color: #e0e0e0;
+    }
+    
+    .title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 5px;
+      color: floralwhite;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">Julkalender 2023</h1>
+  <div class="calendar" id="calendar">
+    <!-- Placerar dörran i en "random" order -->
+  </div>
+
+  <script>
+    function shuffleDoors() {
+      const doors = [];
+      const doorStatus = []; // Trackar dörrars open/closed status
+      for (let i = 1; i <= 24; i++) {
+        const doorWidth = Math.floor(Math.random() * 175) + 75; //  width (bred)
+        const doorHeight = Math.floor(Math.random() * 75) + 75; //  height (höjd)
+        doors.push(`<div class="door" id="door${i}" onclick="toggleDoor(${i})" style="width:${doorWidth}px; height:${doorHeight}px">${i}</div>`);
+        doorStatus.push(false); // false = dörr closed, börjar session med alla dörrar stängda (false)
+      }
+      const shuffledDoors = doors.sort(() => Math.random() - 0.5);
+      document.getElementById('calendar').innerHTML = shuffledDoors.join('');
+      sessionStorage.setItem('doorStatus', JSON.stringify(doorStatus)); // Sparar door status (öppen/closed) i nuvarande session
+    }
+
+    function toggleDoor(doorNumber) {
+      const door = document.getElementById(`door${doorNumber}`);
+      const doorStatus = JSON.parse(sessionStorage.getItem('doorStatus'));
+      if (doorStatus[doorNumber - 1]) {
+        door.style.backgroundImage = '';
+        door.innerHTML = doorNumber;
+        doorStatus[doorNumber - 1] = false; // Ändrar door status till closed
+      } else {
+        door.innerHTML = ''; // Tar bort text när man öppnar en door
+        doorStatus[doorNumber - 1] = true; // Ändrar door status till open
+
+        if (doorNumber === 1) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/christmas-pine-leaves-decorated-with-red-balls-black-background-with-copyspace_24972-593.jpg?size=626&ext=jpg\')';
+        } else if (doorNumber === 2) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/beautiful-christmas-eve-concept-with-copy-space_23-2148703401.jpg?w=1380&t=st=1704571693~exp=1704572293~hmac=536279caed93d82e43b831219ca53d83776e4872d8c3e83f886f6c79583fb27e\')';
+        } else if (doorNumber === 3) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-vector/flat-christmas-season-celebration-background_23-2149869123.jpg?w=1380&t=st=1704571834~exp=1704572434~hmac=b34806f1a3ec428c05709b209502dd223ec0dcb61d58f6e0d6e89798d4bfb5e5\')';
+        } else if (doorNumber === 4) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/christmas-stars-wooden-table_1252-139.jpg?w=740&t=st=1704571917~exp=1704572517~hmac=e05282753d8340bccbc0e6a10af618c8a87378c88af6b1186c505352b44202a0';
+        } else if (doorNumber === 5) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-vector/beautiful-christmas-tree-card-celebration-holiday-background_1035-21630.jpg?w=740&t=st=1704572061~exp=1704572661~hmac=e01636be17901c432d4700fd6a65628e0967454d17529154687a37946674788c';
+        } else if (doorNumber === 6) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/cup-snags-wood-table-near-bank-snow-plant-twig-snowflakes-fairy-lights_23-2148011926.jpg?w=1380&t=st=1704572366~exp=1704572966~hmac=e662f0016bb34eab2ad2671dba920b8c67efde645bfbcd5a06d47a180752017f';
+        } else if (doorNumber === 7) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-vector/hand-drawn-flat-christmas-background_23-2149138397.jpg?w=1380&t=st=1704572478~exp=1704573078~hmac=ca9fa5e6e9c570563cae26b621d462d69a30b8c7589fff015716e513d27264cf';
+        } else if (doorNumber === 8) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-psd/merry-christmas-realistic-3d-background_1361-4682.jpg?w=740&t=st=1704572512~exp=1704573112~hmac=b24049841480fe79a134a14f37f7b2beab963a2cc766a45960056c7b9d866412';
+        } else if (doorNumber === 9) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-vector/set-christmas-design-elements-vector_53876-57580.jpg?w=740&t=st=1704572550~exp=1704573150~hmac=7a7a5a10026657c4bf20db82b5ad840fc61055a2fd5dc8dcb122702218d87087';
+        } else if (doorNumber === 10) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/christmas-lantern-with-fir-branch-decoration-snowy-table-defocused-background-generative-ai_1258-150855.jpg?w=1380&t=st=1704634960~exp=1704635560~hmac=c991986a65b3e739ea5de405dd5d92da26b56966e1cb9caa5ebeab2452c8500e';
+        } else if (doorNumber === 11) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-vector/bird_53876-56334.jpg?w=1380&t=st=1704634972~exp=1704635572~hmac=e1e14ee179151fd962bdef0fd158a9d28afdbbd2f3c5e6287d2b27495197b077';
+        } else if (doorNumber === 12) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/snowman-smiling-night-winter-celebration-with-decorations-generated-by-artificial-intelligence_188544-93982.jpg?t=st=1704631772~exp=1704635372~hmac=b187c708753f22e4bdcb886cc8de27bf8e66306373a5b8c9c2ff390e01bc6383&w=1380';
+        } else if (doorNumber === 13) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/premium-vector/winter-christmas-tree-background-flat-vector-color-illustration_194708-785.jpg?w=740';
+        } else if (doorNumber === 14) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/christmas-green-candle-with-fir-branches-cones-wooden-table_127032-2075.jpg?w=740&t=st=1704635007~exp=1704635607~hmac=229c50a4c4496c5c9479b763ca86b0ed85129a472cbc1994e5949615e97e1ef1';
+        } else if (doorNumber === 15) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/premium-photo/christmas-flat-lay-with-rows-decorated-gifts_264397-2146.jpg?w=740';
+        } else if (doorNumber === 16) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-vector/merry-christmas-lettering_23-2148698198.jpg?w=1380&t=st=1704635038~exp=1704635638~hmac=ca2bd1f68a1b1475787eb45c026fc29e58c8a1a36a2ddc09388fa361f681204d';
+        } else if (doorNumber === 17) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/christmas-eve-concept-with-copy-space_23-2148703282.jpg?w=996&t=st=1704635032~exp=1704635632~hmac=fd239e37f827482c12774716e6ddfccfe4191246631a1ea8cdea4d7765e37aae';
+        } else if (doorNumber === 18) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/view-snowman-with-winter-landscape-snow_23-2150635373.jpg?t=st=1704635052~exp=1704638652~hmac=1c810c245e6c6c466f41de37a2c6c9b63cf6d9dc6e0b744764e054b421e8c9aa&w=1380';
+        } else if (doorNumber === 19) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/christmas-decorations-trinkets_53876-75028.jpg?w=740&t=st=1704635072~exp=1704635672~hmac=9715b7e90b42a80a1e37b4e1ae77e16e96c99a9e5a8ecd88e7a81c55735da3f2';
+        } else if (doorNumber === 20) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/different-little-wood-toys_23-2147962697.jpg?w=740&t=st=1704635082~exp=1704635682~hmac=82012eacb25af78945cb925b6fc657fc148df422e1ed9f11c574456932de25ab';
+        } else if (doorNumber === 21) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/beautiful-village-snow-covered-mountain_181624-4248.jpg?w=1380&t=st=1704635176~exp=1704635776~hmac=dd8f92e6c79b452a073eeb583d6ffe0c7ff9b62f5484a9d3634f0bccd986f72c';
+        } else if (doorNumber === 22) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/premium-photo/christmas-tree-wooden-bokeh-background-christmas-holiday-celebration-concept-greeting-card_120872-28881.jpg?w=740';
+        } else if (doorNumber === 23) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/beautiful-christmas-tree-by-lake_23-2150830450.jpg?t=st=1704635197~exp=1704638797~hmac=fc592861927a6f82fa8f549a7a946dc6cc31f30f771aa4a1a121cc905e228fc4&w=740';
+        } else if (doorNumber === 24) {
+          door.style.backgroundImage = 'url(\'https://img.freepik.com/free-photo/ornament-silver-baubles-near-decorative-stars_23-2147968347.jpg?w=740&t=st=1704635198~exp=1704635798~hmac=36ef17b9116632887f026c2097ac204426cc41c931ba03b64838ae2089457e75';
+        } else {
+          door.style.backgroundImage = ''; // För extra dörrar, ingen custom image (måste addas senare)
+        }
+      }
+      sessionStorage.setItem('doorStatus', JSON.stringify(doorStatus)); // Updatera door status i nuvarande session
+    }
+
+    window.onload = shuffleDoors;
+  </script>
+</body>
+</html>
